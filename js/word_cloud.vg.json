@@ -1,0 +1,72 @@
+{
+    "$schema": "https://vega.github.io/schema/vega/v5.json",
+    "width": 400,
+    "height": 400,
+    "padding": 0,
+  
+    "data": [
+      {
+        "name": "dataset",
+        "url": "data/metro_systems.csv",
+        "format": {"type": "csv"},
+        "transform": [
+          {
+            "type": "countpattern",
+            "field": "country",
+            "case": "upper",
+            "pattern": "[\\w\\s]{3,}"
+          },
+          {
+            "type": "formula", "as": "weight",
+            "expr": "if(datum.text=='MALAYSIA', 1000, 200)"
+          }
+        ]
+      }
+    ],
+    "scales": [
+      {
+        "name": "color",
+        "type": "ordinal",
+        "domain": {"data": "dataset", "field": "text"},
+        "range": ["#9f40ad", "#f01619", "#3d87c4", "#0400ff", "#ff7f00", "#91471c"]
+      }
+    ],
+    "marks": [
+      {
+        "type": "text",
+        "from": {"data": "dataset"},
+        "encode": {
+          "enter": {
+            "text": {"field": "text"},
+            "align": {"value": "center"},
+            "baseline": {"value": "alphabetic"},
+            "fill": {
+                "signal": "if(datum.text == 'UNITED STATES' || datum.text == 'CANADA' || datum.text == 'PANAMA' || datum.text == 'DOMINICAN REPUBLIC' || datum.text == 'MEXICO', '#9f40ad', if(datum.text == 'BRAZIL' || datum.text == 'VENEZUELA' || datum.text == 'COLOMBIA' || datum.text == 'ARGENTINA' || datum.text == 'PERU' || datum.text == 'CHILE' || datum.text == 'ECUADOR', '#f01619', if(datum.text == 'FRANCE' || datum.text == 'SWITZERLAND' || datum.text == 'SWEDEN' || datum.text == 'POLAND' || datum.text == 'HUNGARY' || datum.text == 'ROMANIA' || datum.text == 'PORTUGAL' || datum.text == 'FINLAND' || datum.text == 'UNITED KINGDOM' || datum.text == 'AUSTRIA' || datum.text == 'GREECE' || datum.text == 'DENMARK' || datum.text == 'NETHERLANDS' || datum.text == 'GERMANY' || datum.text == 'BELGIUM' || datum.text == 'SPAIN' || datum.text == 'NORWAY' || datum.text == 'BULGARIA' || datum.text == 'CZECH REPUBLIC' || datum.text == 'RUSSIA' || datum.text == 'ITALY' || datum.text == 'UKRAINE' || datum.text == 'BELARUS', '#3d87c4', if(datum.text == 'EGYPT' || datum.text == 'NIGERIA' || datum.text == 'ALGERIA', '#0400ff', if(datum.text == 'MALAYSIA' || datum.text == 'KAZAKHSTAN' || datum.text == 'UNITED ARAB EMIRATES' || datum.text == 'NORTH KOREA' || datum.text == 'CHINA' || datum.text == 'TAIWAN' || datum.text == 'INDIA' || datum.text == 'AZERBAIJAN' || datum.text == 'SINGAPORE' || datum.text == 'INDONESIA' || datum.text == 'UZBEKISTAN' || datum.text == 'TURKEY' || datum.text == 'JAPAN' || datum.text == 'BANGLADESH' || datum.text == 'QATAR' || datum.text == 'PAKISTAN' || datum.text == 'PHILIPPINES' || datum.text == 'THAILAND' || datum.text == 'ARMENIA' || datum.text == 'IRAN' || datum.text == 'SOUTH KOREA' || datum.text == 'GEORGIA', '#ff7f00', if(datum.text == 'AUSTRALIA', '#91471c', 'grey'))))))"
+            },
+            "tooltip": {
+              "signal": "{'Number of metro systems': datum.count}"
+            }
+          },
+          "update": {
+            "fillOpacity": {"value": 1}
+          },
+          "hover": {
+            "fillOpacity": {"value": 0.5}
+          }
+        },
+        "transform": [
+          {
+            "type": "wordcloud",
+            "size": [400, 400],
+            "text": {"field": "text"},
+            "font": "Metrophobic, Arial",
+            "fontSize": {"field": "datum.count"},
+            "fontWeight": {"field": "datum.weight"},
+            "fontSizeRange": [12, 45],
+            "padding": 1.5
+          }
+        ]
+      }
+    ]
+  }
+  
