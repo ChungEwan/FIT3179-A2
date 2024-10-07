@@ -2,7 +2,30 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 900,
   "height": 450,
-  "projection": {"type": "equalEarth"},
+  "projection": {
+    "type": "equalEarth",
+    "center": {"expr": "center_to"},
+    "scale": {"expr": "zoom_level"}
+  },
+  "params": [
+    {
+      "name": "center_label",
+      "value": "World",
+      "bind": {
+        "input": "select",
+        "options": ["World", "Europe", "Asia"],
+        "name": "Map Area: "
+      }
+    },
+    {
+      "name": "center_to",
+      "expr": "center_label === 'World' ? [0, 0] : (center_label === 'Europe' ? [20, 45] : [100, 27])"
+    },
+    {
+      "name": "zoom_level",
+      "expr": "center_label === 'World' ? 150 : (center_label === 'Europe' ? 600 : 500)"
+    }
+  ],
   "layer": [
     {
       "data": {"sphere": true},
@@ -21,6 +44,12 @@
     {
       "data": {"url": "data/metro_systems.csv"},
       "mark": {"type": "circle", "tooltip": {"content": "data"}, "color": "darkblue"},
+      "transform": [
+        {
+          "calculate": "datum.city + ', ' + datum.country",
+          "as": "location"
+        }
+      ],
       "encoding": {
         "longitude": {"field": "longitude", "type": "quantitative"},
         "latitude": {"field": "latitude", "type": "quantitative"},
@@ -29,7 +58,15 @@
           "type": "quantitative",
           "title": "Annual Ridership in millions",
           "scale": {"domain": [1, 3000]}
-        }
+        },
+        "tooltip": [
+          {"field": "name", "type": "nominal", "title": "Name"},
+          {"field": "location", "type": "nominal", "title": "Location"},
+          {"field": "service_opened", "type": "quantitative", "title": "Opened on"},
+          {"field": "annual_ridership_millions", "type": "quantitative", "title": "Annual Ridership in Millions", "format": ".1f"},
+          {"field": "system_length", "type": "quantitative", "title": "Metro System Length (km)", "format": ".1f"},
+          {"field": "stations", "type": "quantitative", "title": "Number of Stations"}
+        ]
       }
     }
   ]

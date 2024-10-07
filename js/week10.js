@@ -9,3 +9,7 @@ vegaEmbed("#bubble_plot", vg_2, {"actions": false}).then(function(result) {
 var vg_3 = "js/word_cloud.vg.json";
 vegaEmbed("#word_cloud", vg_3, {"actions": false}).then(function(result) {
 }).catch(console.error);
+
+var vg_4 = "js/ranged_dot_plot.vg.json";
+vegaEmbed("#ranged_dot_plot", vg_4, {"actions": false}).then(function(result) {
+}).catch(console.error);
