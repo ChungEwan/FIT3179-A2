@@ -13,17 +13,17 @@
       "value": "World",
       "bind": {
         "input": "select",
-        "options": ["World", "Europe", "Asia"],
+        "options": ["World", "North America", "South America", "Europe, Middle East", "Asia"],
         "name": "Map Area: "
       }
     },
     {
       "name": "center_to",
-      "expr": "center_label === 'World' ? [0, 0] : (center_label === 'Europe' ? [20, 45] : [100, 27])"
+      "expr": "center_label === 'World' ? [0, 0] : (center_label === 'North America' ? [-91, 35] : (center_label === 'South America' ? [-70, -19] : (center_label === 'Europe, Middle East' ? [30, 43] : (center_label === 'Asia' ? [110, 23] : [0, 0]))))"
     },
     {
       "name": "zoom_level",
-      "expr": "center_label === 'World' ? 150 : (center_label === 'Europe' ? 600 : 500)"
+      "expr": "center_label === 'World' ? 150 : (center_label === 'North America' ? 500 : (center_label === 'South America' ? 350: (center_label === 'Europe, Middle East' ? 600 : (center_label === 'Asia' ? 490 : 150))))"
     }
   ],
   "layer": [
@@ -35,7 +35,7 @@
       "data": {
         "url": "js/ne_110m.json",
         "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}},
-        "mark": {"type": "geoshape", "fill": "lightyellow", "stroke": "grey"}
+        "mark": {"type": "geoshape", "fill": "lightgoldenrodyellow", "stroke": "dimgray"}
     },
     {
       "data": {"graticule": {"step": [30, 30]}},
@@ -43,7 +43,7 @@
     },
     {
       "data": {"url": "data/metro_systems.csv"},
-      "mark": {"type": "circle", "tooltip": {"content": "data"}, "color": "darkblue"},
+      "mark": {"type": "circle", "color": "darkblue", "stroke": "gray", "strokeWidth": 0.8},
       "transform": [
         {
           "calculate": "datum.city + ', ' + datum.country",

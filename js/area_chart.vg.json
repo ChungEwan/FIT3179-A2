@@ -1,0 +1,197 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {"url": "data/metro_systems.csv"},
+    "vconcat": [
+      {
+        "hconcat": [
+          {
+            "width": 150,
+            "height": 150,
+            "mark": "area",
+            "title": "All Metro Systems",
+            "encoding": {
+              "x": {
+                "field": "service_opened",
+                "type": "quantitative",
+                "title": "Year",
+                "scale": {
+                  "domain": [1860, 2024]
+                },
+                "axis": {
+                    "grid": false
+                }
+              },
+              "y": {
+                "field": "cumulative_count",
+                "type": "quantitative",
+                "title": "Cumulative Number of Metro Stations",
+                "scale": {
+                    "domain": [0, 205]
+                }
+              },
+              "color": {
+                "value": "gray"
+              }
+            },
+            "transform": [
+      {
+        "aggregate": [{"op": "count", "field": "*", "as": "count"}],
+        "groupby": ["service_opened", "continent"]
+      },
+      {
+        "sort": [{"field": "service_opened"}],
+        "window": [{"op": "sum", "field": "count", "as": "cumulative_count"}],
+        "frame": [null, 0]
+      }
+    ]
+          },
+          {
+            "width": 150,
+            "height": 150,
+            "mark": "area",
+            "title": "Metro Systems in Europe",
+            "encoding": {
+              "x": {
+                "field": "service_opened",
+                "type": "quantitative",
+                "title": "Year",
+                "scale": {
+                  "domain": [1860, 2024]
+                },
+                "axis": {
+                    "grid": false
+                }
+              },
+              "y": {
+                "field": "cumulative_count",
+                "type": "quantitative",
+                "title": "Cumulative Number of Metro Stations",
+                "scale": {
+                    "domain": [0, 205]
+                }
+              },
+              "color": {
+                "value": "blue"
+              }
+            },
+            "transform": [
+              {
+                "filter": "datum.continent == 'Europe'"
+              },
+              {
+                "aggregate": [{"op": "count", "field": "*", "as": "count"}],
+                "groupby": ["service_opened"]
+              },
+              {
+                "sort": [{"field": "service_opened"}],
+                "window": [{"op": "sum", "field": "count", "as": "cumulative_count"}],
+                "frame": [null, 0]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "hconcat": [
+          {
+            "width": 150,
+            "height": 150,
+            "mark": "area",
+            "title": "Metro Systems in Asia",
+            "encoding": {
+              "x": {
+                "field": "service_opened",
+                "type": "quantitative",
+                "title": "Year",
+                "scale": {
+                  "domain": [1860, 2024]
+                },
+                "axis": {
+                    "grid": false
+                }
+              },
+              "y": {
+                "field": "cumulative_count",
+                "type": "quantitative",
+                "title": "Cumulative Number of Metro Stations",
+                "scale": {
+                    "domain": [0, 205]
+                }
+              },
+              "color": {
+                "value": "green"
+              }
+            },
+            "transform": [
+              {
+                "filter": "datum.continent == 'Asia'"
+              },
+              {
+                "aggregate": [{"op": "count", "field": "*", "as": "count"}],
+                "groupby": ["service_opened"]
+              },
+              {
+                "sort": [{"field": "service_opened"}],
+                "window": [{"op": "sum", "field": "count", "as": "cumulative_count"}],
+                "frame": [null, 0]
+              }
+            ]
+          },
+          {
+            "width": 150,
+            "height": 150,
+            "mark": "area",
+            "title": "Metro Systems in North America",
+            "encoding": {
+              "x": {
+                "field": "service_opened",
+                "type": "quantitative",
+                "title": "Year",
+                "scale": {
+                  "domain": [1860, 2024]
+                },
+                "axis": {
+                    "grid": false
+                }
+              },
+              "y": {
+                "field": "cumulative_count",
+                "type": "quantitative",
+                "title": "Cumulative Number of Metro Stations",
+                "scale": {
+                    "domain": [0, 205]
+                }
+              },
+              "color": {
+                "value": "orange"
+              }
+            },
+            "transform": [
+              {
+                "filter": "datum.continent == 'North America'"
+              },
+              {
+                "aggregate": [{"op": "count", "field": "*", "as": "count"}],
+                "groupby": ["service_opened"]
+              },
+              {
+                "sort": [{"field": "service_opened"}],
+                "window": [{"op": "sum", "field": "count", "as": "cumulative_count"}],
+                "frame": [null, 0]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "resolve": {
+      "scale": {
+        "y": "independent"
+      }
+    },
+    "config": {
+      "view": {
+        "stroke": "transparent"
+      }
+    }
+  }

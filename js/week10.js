@@ -13,3 +13,7 @@ vegaEmbed("#word_cloud", vg_3, {"actions": false}).then(function(result) {
 var vg_4 = "js/ranged_dot_plot.vg.json";
 vegaEmbed("#ranged_dot_plot", vg_4, {"actions": false}).then(function(result) {
 }).catch(console.error);
+
+var vg_5 = "js/area_chart.vg.json";
+vegaEmbed("#area_chart", vg_5, {"actions": false}).then(function(result) {
+}).catch(console.error);
