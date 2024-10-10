@@ -22,21 +22,41 @@
         <h1>Metro Systems Around The World</h1>
         <div class="pure-g">
             <div class="pure-u-1-1">
+                <p id="center-text">There are many metro systems around the world. This visualisation explores the development of metro systems around the world over time, as well as the distribution of metro systems today. The map shows where each metro system is located.</p>
                 <div id="map"></div>
+                <div id="map-dropdown"></div>
             </div>
         </div>
-        <h2>Relation Between Metro System Length and Number of Stations</h2>
+        <h2>Development of Metro Systems</h2>
         <div class="pure-g">
-            <div class="pure-u-14-24">
-                <div id="bubble_plot"></div>
+            <div class="pure-u-1-2">
+                <div id="area_chart"></div>
+                <p>The majority of metro systems are found in Asia, Europe and North America. The number of metro systems has gone up steadily from around the 1970s, where different continents contribute to the increase of metro systems in different years.</p>
             </div>
-            <div class="pure-u-10-24">
-                <p>By comparing the different metro systems' length with the number of stations, there is a clear trend of longer metro systems having a larger number of stations. With an increasing metro system length, the annual ridership of the metro system generally increases, with very few exceptions.</p>
+            <div class="pure-u-1-2">
+                <div id="ranged_dot_plot"></div>
+                <p>North America and Europe have had metro systems built in the earlier years, followed by South America. The development of metro systems in Asia and Africa are more recent. Many metro systems do get expanded in more recent years.</p>
             </div>
         </div>
-        <div id="word_cloud"></div>
-        <div id="ranged_dot_plot"></div>
-        <div id="area_chart"></div>
+        <h2>Metro Systems Today</h2>
+        <div class="pure-g">
+            <div class="pure-u-1-2">
+                <div id="bubble_plot"></div>
+                <div id="bubble-plot-dropdown"></div>
+                <p>There is a clear trend of longer metro systems having a larger number of stations. With an increasing metro system length and number of stations, the annual ridership of the metro system generally increases, with very few exceptions. Malaysia has a low annual ridership for its system length and number of stations.</p>
+            </div>
+            <div class="pure-u-1-2">
+                <div id="word_cloud"></div>
+                <p>There are many countries with a single metro system. Countries which have many metro systems are generally larger in area and population. Malaysia only has 1 metro system, which is the RapidKL.</p>
+            </div>
+        </div>
+        <pre>
+        
+        Visualisation by Ewan Chung
+        Last modified on 10/10/2024
+        Data from <a href="https://www.kaggle.com/datasets/drahulsingh/metro-systems-worldwide">Kaggle</a> by drahulsingh, last updated a year ago
+        Data is collected through data scraping
+        </pre>
     </div>
 </body>
 </html>

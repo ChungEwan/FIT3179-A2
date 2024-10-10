@@ -14,7 +14,8 @@
       "bind": {
         "input": "select",
         "options": ["World", "North America", "South America", "Europe, Middle East", "Asia"],
-        "name": "Map Area: "
+        "name": "Map Area: ",
+        "element": "#map-dropdown"
       }
     },
     {
@@ -63,11 +64,18 @@
           {"field": "name", "type": "nominal", "title": "Name"},
           {"field": "location", "type": "nominal", "title": "Location"},
           {"field": "service_opened", "type": "quantitative", "title": "Opened on"},
-          {"field": "annual_ridership_millions", "type": "quantitative", "title": "Annual Ridership in Millions", "format": ".1f"},
+          {"field": "annual_ridership_millions", "type": "quantitative", "title": "Annual Ridership in millions", "format": ".1f"},
           {"field": "system_length", "type": "quantitative", "title": "Metro System Length (km)", "format": ".1f"},
           {"field": "stations", "type": "quantitative", "title": "Number of Stations"}
         ]
       }
     }
-  ]
+  ],
+  "config": {
+    "axis": {"labelFont": "Metrophobic, Arial", "titleFont": "Metrophobic, Arial"},
+    "legend": {"labelFont": "Metrophobic, Arial", "titleFont": "Metrophobic, Arial"},
+    "header": {"labelFont": "Metrophobic, Arial", "titleFont": "Metrophobic, Arial"},
+    "mark": {"font": "Metrophobic, Arial"},
+    "title": {"font": "Metrophobic, Arial", "subtitleFont": "Metrophobic, Arial"}
+  }
 }

@@ -1,5 +1,6 @@
 body {
   background-color: white;
+  font-family: "Metrophobic", sans-serif;
 }
 
 .page {
@@ -11,17 +12,49 @@ body {
 }
 
 h1, h2 {
-    font-family: "Metrophobic", sans-serif;
     text-align: center;
 }
 
 p {
+    padding-left: 60px;
+    padding-right: 40px;
+}
+
+pre {
     font-family: "Metrophobic", sans-serif;
+    padding-left: 25px;
+    font-size: 13px;
 }
 
 .pure-u-10-24 {
     display: grid;
     align-items: center;
+}
+
+#center-text {
+    padding-left: 20vw;
+    padding-right: 20vw;
+    text-align: center;
+}
+
+#map-dropdown {
+    padding-left: 200px;
+}
+
+#bubble-plot-dropdown {
+    padding-left: 55px;
+}
+
+#word_cloud {
+    padding-left: 30px;
+}
+
+#map{
+    padding-left: 8vw;
+}
+
+#vg-tooltip-element {
+    font-family: "Metrophobic", sans-serif;
 }
 
 @font-face {

@@ -1,8 +1,9 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "height": 400,
+    "height": 423,
     "width": 400,
     "data": {"url": "data/metro_systems.csv"},
+    "title": "Average Opening Year and Expansion Year of Metro Systems",
     "transform": [
       {
         "aggregate": [
@@ -113,5 +114,12 @@
           ]
         }
       }
-    ]
+    ],
+    "config": {
+      "axis": {"labelFont": "Metrophobic, Arial", "titleFont": "Metrophobic, Arial"},
+      "legend": {"labelFont": "Metrophobic, Arial", "titleFont": "Metrophobic, Arial"},
+      "header": {"labelFont": "Metrophobic, Arial", "titleFont": "Metrophobic, Arial"},
+      "mark": {"font": "Metrophobic, Arial"},
+      "title": {"font": "Metrophobic, Arial", "subtitleFont": "Metrophobic, Arial"}
+    }
   }

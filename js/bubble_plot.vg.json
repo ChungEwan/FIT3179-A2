@@ -1,10 +1,22 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "data": {"url": "data/metro_systems.csv"},
-  "height": 400,
-  "width": 400,
+  "height": 350,
+  "width": 350,
   "transform": [
     {"filter": "datum.annual_ridership_millions > 0"}
+  ],
+  "params": [
+    {
+      "name": "country_selector",
+      "value": "All",
+      "bind": {
+        "input": "select",
+        "options": ["All", "Algeria", "Argentina", "Armenia", "Australia", "Austria", "Azerbaijan", "Bangladesh", "Belarus", "Belgium", "Brazil", "Bulgaria", "Canada", "Chile", "China", "Colombia", "Czech Republic", "Denmark", "Dominican Republic", "Ecuador", "Egypt", "Finland", "France", "Georgia", "Germany", "Greece", "Hungary", "India", "Indonesia", "Iran", "Italy", "Japan", "Kazakhstan", "Malaysia", "Mexico", "Netherlands", "Nigeria", "North Korea", "Norway", "Pakistan", "Panama", "Peru", "Philippines", "Poland", "Portugal", "Qatar", "Romania", "Russia", "Singapore", "South Korea", "Spain", "Sweden", "Switzerland", "Taiwan", "Thailand", "Turkey", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Uzbekistan", "Venezuela"],
+        "name": "Country: ",
+        "element": "#bubble-plot-dropdown"
+      }
+    }
   ],
   "layer": [
     {
@@ -33,7 +45,7 @@
         },
         "size": {
           "field": "annual_ridership_millions",
-          "title": "Annual Ridership in Millions",
+          "title": ["Annual Ridership", "in millions"],
           "type": "quantitative",
           "scale": {
             "type": "threshold",
@@ -42,9 +54,13 @@
           }
         },
         "opacity": {
-          "condition": {"param": "continent_selection", "value": 0.6},
-          "value": 0.15
-        },
+        "condition": [
+          {"test": "country_selector == datum.country", "value": 0.8},
+          {"test": "country_selector != datum.country && country_selector != 'All'", "value": 0},
+          {"param": "continent_selection", "value": 0.7}
+        ],
+        "value": 0.2
+      },
         "color": {
           "field": "continent",
           "title": "Continent",
@@ -54,10 +70,12 @@
             "range": ["#9f40ad", "#f01619", "#3d87c4", "#0400ff", "#ff7f00", "#91471c"]
           }
         },
+        "stroke": {"value": "darkgray"},
+        "strokeWidth": {"value": 0.2},
         "tooltip": [
           {"field": "name", "type": "nominal", "title": "Name"},
           {"field": "country", "type": "nominal", "title": "Country"},
-          {"field": "annual_ridership_millions", "type": "quantitative", "title": "Annual Ridership in Millions", "format": ".1f"},
+          {"field": "annual_ridership_millions", "type": "quantitative", "title": "Annual Ridership in millions", "format": ".1f"},
           {"field": "system_length", "type": "quantitative", "title": "Metro System Length (km)", "format": ".1f"},
           {"field": "stations", "type": "quantitative", "title": "Number of Stations"}
         ]  
@@ -70,7 +88,8 @@
         "baseline": "middle",
         "dx": -11,
         "dy": 0,
-        "fontSize": 11,
+        "font": "Metrophobic, Arial",
+        "fontSize": 10,
         "fontStyle": "italic"
       },
       "encoding": {
@@ -87,13 +106,26 @@
         "text": {"field": "name", "type": "nominal"},
         "color": {"value": "black"},
         "opacity": {
-          "condition": {
-            "test": "datum['name'] == 'New York City Subway' || datum['name'] == 'Beijing Subway' || datum['name'] == 'Rapid KL'",
-            "value": 1
-          },
+          "condition": [
+            {
+              "test": "(datum['name'] == 'New York City Subway' || datum['name'] == 'Beijing Subway' || datum['name'] == 'Rapid KL') && country_selector == 'All'",
+              "value": 1
+            },
+            {
+              "test": "country_selector == datum['country'] && country_selector != 'China' && country_selector != 'India' && country_selector != 'United States' && country_selector != 'Japan' && country_selector != 'Brazil' && country_selector != 'France' && country_selector != 'Germany' && country_selector != 'Russia' && country_selector != 'South Korea'",
+              "value": 1
+            }
+          ],
           "value": 0
         }
       }
     }
-  ]
+  ],
+  "config": {
+    "axis": {"labelFont": "Metrophobic, Arial", "titleFont": "Metrophobic, Arial"},
+    "legend": {"labelFont": "Metrophobic, Arial", "titleFont": "Metrophobic, Arial"},
+    "header": {"labelFont": "Metrophobic, Arial", "titleFont": "Metrophobic, Arial"},
+    "mark": {"font": "Metrophobic, Arial"},
+    "title": {"font": "Metrophobic, Arial", "subtitleFont": "Metrophobic, Arial"}
+  }
 }

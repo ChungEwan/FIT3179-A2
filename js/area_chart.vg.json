@@ -5,17 +5,17 @@
       {
         "hconcat": [
           {
-            "width": 150,
-            "height": 150,
+            "width": 200,
+            "height": 160,
             "mark": "area",
-            "title": "All Metro Systems",
+            "title": "Metro Systems Globally",
             "encoding": {
               "x": {
                 "field": "service_opened",
                 "type": "quantitative",
                 "title": "Year",
                 "scale": {
-                  "domain": [1860, 2024]
+                  "domain": [1860, 2023]
                 },
                 "axis": {
                     "grid": false
@@ -31,23 +31,27 @@
               },
               "color": {
                 "value": "gray"
-              }
+              },
+              "tooltip": [
+                {"field": "service_opened", "type": "ordinal", "title": "Year"},
+                {"field": "cumulative_count", "type": "quantitative", "title": "Total Metro Systems"}
+              ]
             },
             "transform": [
-      {
-        "aggregate": [{"op": "count", "field": "*", "as": "count"}],
-        "groupby": ["service_opened", "continent"]
-      },
-      {
-        "sort": [{"field": "service_opened"}],
-        "window": [{"op": "sum", "field": "count", "as": "cumulative_count"}],
-        "frame": [null, 0]
-      }
-    ]
+              {
+                "aggregate": [{"op": "count", "field": "*", "as": "count"}],
+                "groupby": ["service_opened"]
+              },
+              {
+                "sort": [{"field": "service_opened"}],
+                "window": [{"op": "sum", "field": "count", "as": "cumulative_count"}],
+                "frame": [null, 0]
+              }
+            ]
           },
           {
-            "width": 150,
-            "height": 150,
+            "width": 200,
+            "height": 160,
             "mark": "area",
             "title": "Metro Systems in Europe",
             "encoding": {
@@ -56,7 +60,7 @@
                 "type": "quantitative",
                 "title": "Year",
                 "scale": {
-                  "domain": [1860, 2024]
+                  "domain": [1860, 2023]
                 },
                 "axis": {
                     "grid": false
@@ -71,8 +75,12 @@
                 }
               },
               "color": {
-                "value": "blue"
-              }
+                "value": "#3d87c4"
+              },
+              "tooltip": [
+                {"field": "service_opened", "type": "ordinal", "title": "Year"},
+                {"field": "cumulative_count", "type": "quantitative", "title": "Total Metro Systems"}
+              ]
             },
             "transform": [
               {
@@ -94,8 +102,8 @@
       {
         "hconcat": [
           {
-            "width": 150,
-            "height": 150,
+            "width": 200,
+            "height": 160,
             "mark": "area",
             "title": "Metro Systems in Asia",
             "encoding": {
@@ -104,7 +112,7 @@
                 "type": "quantitative",
                 "title": "Year",
                 "scale": {
-                  "domain": [1860, 2024]
+                  "domain": [1860, 2023]
                 },
                 "axis": {
                     "grid": false
@@ -119,8 +127,12 @@
                 }
               },
               "color": {
-                "value": "green"
-              }
+                "value": "#ff7f00"
+              },
+              "tooltip": [
+                {"field": "service_opened", "type": "ordinal", "title": "Year"},
+                {"field": "cumulative_count", "type": "quantitative", "title": "Total Metro Systems"}
+              ]
             },
             "transform": [
               {
@@ -138,8 +150,8 @@
             ]
           },
           {
-            "width": 150,
-            "height": 150,
+            "width": 200,
+            "height": 160,
             "mark": "area",
             "title": "Metro Systems in North America",
             "encoding": {
@@ -148,7 +160,7 @@
                 "type": "quantitative",
                 "title": "Year",
                 "scale": {
-                  "domain": [1860, 2024]
+                  "domain": [1860, 2023]
                 },
                 "axis": {
                     "grid": false
@@ -163,8 +175,12 @@
                 }
               },
               "color": {
-                "value": "orange"
-              }
+                "value": "#9f40ad"
+              },
+              "tooltip": [
+                {"field": "service_opened", "type": "ordinal", "title": "Year"},
+                {"field": "cumulative_count", "type": "quantitative", "title": "Total Metro Systems"}
+              ]
             },
             "transform": [
               {
@@ -190,6 +206,11 @@
       }
     },
     "config": {
+      "axis": {"labelFont": "Metrophobic, Arial", "titleFont": "Metrophobic, Arial"},
+      "legend": {"labelFont": "Metrophobic, Arial", "titleFont": "Metrophobic, Arial"},
+      "header": {"labelFont": "Metrophobic, Arial", "titleFont": "Metrophobic, Arial"},
+      "mark": {"font": "Metrophobic, Arial"},
+      "title": {"font": "Metrophobic, Arial", "subtitleFont": "Metrophobic, Arial"},
       "view": {
         "stroke": "transparent"
       }

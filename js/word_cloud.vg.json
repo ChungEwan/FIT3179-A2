@@ -1,8 +1,18 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
-  "width": 400,
-  "height": 400,
-  "padding": 0,
+  "width": 500,
+  "height": 399,
+  "padding": 10,
+  "signals": [
+    {
+      "name": "hoveredCountry",
+      "value": null,
+      "on": [
+        {"events": "text:mouseover", "update": "datum.text"},
+        {"events": "text:mouseout", "update": "null"}
+      ]
+    }
+  ],
   "data": [
     {
       "name": "dataset",
@@ -49,13 +59,13 @@
       "transform": [
         {
           "type": "wordcloud",
-          "size": [400, 400],
+          "size": [500, 399],
           "text": {"field": "text"},
           "font": "Metrophobic, Arial",
           "fontSize": {"field": "datum.count"},
           "fontWeight": {"field": "datum.weight"},
           "fontSizeRange": [12, 45],
-          "padding": 1.5
+          "padding": 2
         }
       ]
     }
