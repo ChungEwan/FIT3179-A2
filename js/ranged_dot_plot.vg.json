@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "height": 423,
-    "width": 400,
+    "width": 380,
     "data": {"url": "data/metro_systems.csv"},
     "title": "Average Opening Year and Expansion Year of Metro Systems",
     "transform": [
@@ -31,7 +31,8 @@
           "offset": 3,
           "ticks": false,
           "minExtent": 70,
-          "domain": false
+          "domain": false,
+          "title": null
         }
       }
     },
@@ -113,6 +114,66 @@
             {"field": "last_expanded", "type": "nominal", "title": "Average Expansion Year"}
           ]
         }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "align": "right",
+          "fontStyle": "italic",
+          "dx": 133,
+          "dy": -15
+        },
+        "encoding": {
+          "x": {
+            "field": "avg_service_opened",
+            "type": "quantitative"
+          },
+          "y": {
+            "field": "continent",
+            "type": "nominal"
+          },
+          "text": {
+            "value": "Oldest average opening year"
+          },
+          "color": {
+            "value": "black"
+          }
+        },
+        "transform": [
+          {
+            "filter": "datum.continent == 'North America'"
+          }
+        ]
+      },
+      {
+        "mark": {
+          "type": "text",
+          "align": "right",
+          "fontStyle": "italic",
+          "dx": 0,
+          "dy": -15
+        },
+        "encoding": {
+          "x": {
+            "field": "avg_service_opened",
+            "type": "quantitative"
+          },
+          "y": {
+            "field": "continent",
+            "type": "nominal"
+          },
+          "text": {
+            "value": "Only metro system opened in 2019"
+          },
+          "color": {
+            "value": "black"
+          }
+        },
+        "transform": [
+          {
+            "filter": "datum.continent == 'Oceania'"
+          }
+        ]
       }
     ],
     "config": {

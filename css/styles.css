@@ -11,19 +11,54 @@ body {
     padding-top: 10px;
 }
 
-h1, h2 {
-    text-align: center;
+h1 {
+    padding-left: 27%;
+    font-family: "IBM Plex Serif", serif;
 }
 
-p {
-    padding-left: 60px;
+h2 {
+    text-align: center;
+    padding-left: 5%;
+}
+
+.left-p {
+    padding-left: 12%;
     padding-right: 40px;
+}
+
+.right-p {
+    padding-left: 25%;
 }
 
 pre {
     font-family: "Metrophobic", sans-serif;
     padding-left: 25px;
     font-size: 13px;
+    color: rgb(52, 52, 52);
+}
+
+a {
+    color: blue;
+}
+
+.asia {
+    background-color: rgba(255, 127, 0, 0.5);
+}
+
+.europe {
+    background-color: rgba(61, 135, 196, 0.4);
+}
+
+.north-america {
+    background-color: rgba(159, 64, 173, 0.35);
+}
+
+.south-america {
+    background-color: rgba(240, 22, 25, 0.4);
+}
+
+.africa {
+    background-color: rgba(4, 0, 255, 0.3);
 }
 
 .pure-u-10-24 {
@@ -32,9 +67,8 @@ pre {
 }
 
 #center-text {
-    padding-left: 20vw;
-    padding-right: 20vw;
-    text-align: center;
+    padding-left: 32%;
+    padding-right: 28%;
 }
 
 #map-dropdown {
@@ -46,11 +80,23 @@ pre {
 }
 
 #word_cloud {
-    padding-left: 30px;
+    padding-left: 13%;
 }
 
-#map{
-    padding-left: 8vw;
+#ranged_dot_plot {
+    padding-left: 10%;
+}
+
+#map {
+    padding-left: 10%;
+}
+
+#top-h2 {
+    margin-top: 70px;
+}
+
+#bottom-h2 {
+    margin-top: 60px;
 }
 
 #vg-tooltip-element {

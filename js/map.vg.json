@@ -44,7 +44,7 @@
     },
     {
       "data": {"url": "data/metro_systems.csv"},
-      "mark": {"type": "circle", "color": "darkblue", "stroke": "gray", "strokeWidth": 0.8},
+      "mark": {"type": "circle", "color": "lightgray", "fillOpacity": 0.2, "stroke": "darkblue", "strokeWidth": 1.5},
       "transform": [
         {
           "calculate": "datum.city + ', ' + datum.country",
@@ -57,8 +57,8 @@
         "size": {
           "field": "annual_ridership_millions",
           "type": "quantitative",
-          "title": "Annual Ridership in millions",
-          "scale": {"domain": [1, 3000]}
+          "title": ["Annual Ridership", "in millions"],
+          "scale": {"domain": [1, 3500]}
         },
         "tooltip": [
           {"field": "name", "type": "nominal", "title": "Name"},
