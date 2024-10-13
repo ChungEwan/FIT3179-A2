@@ -44,7 +44,7 @@
     },
     {
       "data": {"url": "data/metro_systems.csv"},
-      "mark": {"type": "circle", "color": "lightgray", "fillOpacity": 0.3, "stroke": "darkblue", "strokeWidth": 0.8, "strokeOpacity": 1},
+      "mark": {"type": "circle", "color": "lightgray", "fillOpacity": 0.3, "strokeWidth": 0.8, "strokeOpacity": 1},
       "transform": [
         {
           "calculate": "datum.city + ', ' + datum.country",
@@ -59,6 +59,13 @@
           "type": "quantitative",
           "title": ["Annual Ridership", "in millions"],
           "scale": {"domain": [1, 3000], "range": [8, 500]}
+        },
+        "stroke": {
+          "condition": {
+            "test": "datum.country === 'Malaysia'",
+            "value": "red"
+          },
+        "value": "darkblue"
         },
         "tooltip": [
           {"field": "name", "type": "nominal", "title": "Name"},
