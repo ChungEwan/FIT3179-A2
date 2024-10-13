@@ -30,7 +30,7 @@
   "layer": [
     {
       "data": {"sphere": true},
-      "mark": {"type": "geoshape", "fill": "lightblue"}
+      "mark": {"type": "geoshape", "fill": "#daf6f7"}
     },
     {
       "data": {
@@ -44,7 +44,7 @@
     },
     {
       "data": {"url": "data/metro_systems.csv"},
-      "mark": {"type": "circle", "color": "lightgray", "fillOpacity": 0.2, "stroke": "darkblue", "strokeWidth": 1.5},
+      "mark": {"type": "circle", "color": "lightgray", "fillOpacity": 0.3, "stroke": "darkblue", "strokeWidth": 0.8, "strokeOpacity": 1},
       "transform": [
         {
           "calculate": "datum.city + ', ' + datum.country",
@@ -58,12 +58,12 @@
           "field": "annual_ridership_millions",
           "type": "quantitative",
           "title": ["Annual Ridership", "in millions"],
-          "scale": {"domain": [1, 3500]}
+          "scale": {"domain": [1, 3000], "range": [8, 500]}
         },
         "tooltip": [
           {"field": "name", "type": "nominal", "title": "Name"},
           {"field": "location", "type": "nominal", "title": "Location"},
-          {"field": "service_opened", "type": "quantitative", "title": "Opened on"},
+          {"field": "service_opened", "type": "quantitative", "title": "Opened"},
           {"field": "annual_ridership_millions", "type": "quantitative", "title": "Annual Ridership in millions", "format": ".1f"},
           {"field": "system_length", "type": "quantitative", "title": "Metro System Length (km)", "format": ".1f"},
           {"field": "stations", "type": "quantitative", "title": "Number of Stations"}

@@ -29,7 +29,7 @@ Chengdu,China,Chengdu Metro,2010,2020,284,518.5,1800,30.6272148,104.0642676,Asia
 Chongqing,China,Chongqing Rail Transit,2004,2023,238,485.02,839.75,29.3788771,106.5037462,Asia
 Dalian,China,Dalian Metro,2003,2023,99,237.74,125.22,38.9360743,121.5764279,Asia
 Dongguan,China,Dongguan Rail Transit,2016,,15,37.7,35.06,22.8703412,113.6603733,Asia
-Foshan,China,Foshan Metro,2010,2022,61,112.7,,22.984725,113.0013219,Asia
+Foshan,China,Foshan Metro,2010,2022,61,112.7,200,22.984725,113.0013219,Asia
 Fuzhou,China,Fuzhou Metro,2016,2022,74,114.2,94.75,25.9892514,119.3466181,Asia
 Guangzhou,China,Guangzhou Metro,1997,2022,254,617.05,2415.6,23.3986152,113.2998573,Asia
 Guiyang,China,Guiyang Metro,2017,2021,55,75.7,36.98,26.58333,106.71667,Asia
@@ -93,7 +93,7 @@ Delhi,India,Delhi Metro,2002,2022,230,348.12,1790,28.5249228,77.2927925,Asia
 Gurgaon,India,Rapid Metro Gurgaon,2013,2017,11,12.8,18.3,28.4601,77.02635,Asia
 Hyderabad,India,Hyderabad Metro,2017,2020,56,69,173,17.4824387,78.414725,Asia
 Jaipur,India,Jaipur Metro,2015,2020,11,12,7,26.8951773,75.8090252,Asia
-Kanpur,India,Kanpur Metro,2021,,9,8.98,,26.4924294,80.2872546,Asia
+Kanpur,India,Kanpur Metro,2021,,9,8.98,241,26.4924294,80.2872546,Asia
 Kochi,India,Kochi Metro,2017,2022,24,27.4,17,9.9683373,76.2431346,Asia
 Kolkata,India,Kolkata Metro,1984,2022,40,46.96,256,22.56263,88.36304,Asia
 Lucknow,India,Lucknow Metro,2017,2019,21,22.87,22,26.8406512,80.937544,Asia
@@ -144,7 +144,7 @@ Mexico City,Mexico,Mexico City Metro,1969,2012,163,200.88,935.2,19.42847,-99.127
 Monterrey,Mexico,Metrorrey,1991,2021,38,40.2,109.9,25.7178401,-100.3105617,North America
 Amsterdam,Netherlands,Amsterdam Metro,1977,2018,39,41.2,111.3,52.37403,4.88969,Europe
 Rotterdam,Netherlands,Rotterdam Metro,1968,2023,71,103.1,99,51.9225,4.47917,Europe
-Lagos,Nigeria,Lagos Rail Mass Transit,2023,,5,13,,6.45407,3.39467,Africa
+Lagos,Nigeria,Lagos Rail Mass Transit,2023,,5,13,2,6.45407,3.39467,Africa
 Oslo,Norway,Oslo Metro,1966,2016,101,85,74,59.91273,10.74609,Europe
 Lahore,Pakistan,Lahore Metro,2020,,26,27.1,20,31.6052665,74.2984629,Asia
 Panama City,Panama,Panama Metro,2014,2023,31,39.3,49.9,8.9936,-79.51973,North America
@@ -153,7 +153,7 @@ Manila,Philippines,Manila Light Rail Transit System,1984,2021,33,37.2,218.2,14.6
 Manila,Philippines,Manila Metro Rail Transit System,1999,2000,13,16.9,96.9,14.6042,120.9822,Asia
 Warsaw,Poland,Warsaw Metro,1995,2022,38,41.3,195.4,52.22977,21.01178,Europe
 Lisbon,Portugal,Lisbon Metro,1959,2016,50,44.2,184.6,38.71667,-9.13333,Europe
-Doha,Qatar,Doha Metro,2019,2019,37,76,,25.27932,51.52245,Asia
+Doha,Qatar,Doha Metro,2019,2019,37,76,25,25.27932,51.52245,Asia
 Bucharest,Romania,Bucharest Metro,1979,2022,56,80.1,179.2,44.43225,26.10626,Europe
 Kazan,Russia,Kazan Metro,2005,2018,11,16.8,30.5,55.8380219,49.031892,Europe
 Moscow,Russia,Moscow Metro,1935,2023,289,461.5,2061.8,55.75222,37.61556,Europe
@@ -170,7 +170,7 @@ Stockholm,Sweden,Stockholm Metro,1950,1994,100,108,355,59.2994582,18.0173078,Eur
 Lausanne,Switzerland,Lausanne Métro,2008,,14,5.9,32.8,46.516,6.63282,Europe
 Kaohsiung,Taiwan,Kaohsiung Metro,2008,2012,37,42.7,65.4,22.5840668,120.3318372,Asia
 Taipei,Taiwan,Taipei Metro,1996,2020,119,146.2,695.7,25.0486855,121.5142873,Asia
-Taichung,Taiwan,Taichung Metro,2021,,18,16.7,,24.2039317,120.5979765,Asia
+Taichung,Taiwan,Taichung Metro,2021,,18,16.7,4.2,24.2039317,120.5979765,Asia
 Taoyuan,Taiwan,Taoyuan Metro,2017,,22,53.1,28,25.0837078,121.2705905,Asia
 Bangkok,Thailand,BTS Skytrain,1999,2021,60,68.2,236.9,13.8020558,100.5549364,Asia
 Bangkok,Thailand,Metropolitan Rapid Transit,2004,2019,53,71,95.3,13.75398,100.50144,Asia
